@@ -4,8 +4,7 @@ h1 {
     justify-content: center;
     align-items: center;
     font-size: 30vw; /* The font-size adjusts according to the viewport width */
-    text-align: center;
-    color: #333; /* Adjust this to the color you prefer */
+    text-align: center;/* Adjust this to the color you prefer */
     margin: 20px 0;
     line-height: 1.2;
     font-family: 'Arial', sans-serif; /* You can use any font-family */
