@@ -11,13 +11,13 @@ h1 {
 /* For tablets (width below 768px) */
 @media (max-width: 768px) {
     h1 {
-        font-size: 6vw; /* Increase the font size for smaller screens */
+        font-size: 60vw; /* Increase the font size for smaller screens */
     }
 }
 
 /* For mobile phones (width below 480px) */
 @media (max-width: 480px) {
     h1 {
-        font-size: 8vw; /* Further increase the font size for very small screens */
+        font-size: 80vw; /* Further increase the font size for very small screens */
     }
 }
