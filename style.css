@@ -16,6 +16,8 @@ body{
     align-items: center;
     margin-top:100px;
     margin-bottom: auto;
+    background-color : black;
+    color : white;
 }
 
 /* For tablets (width below 768px) */
