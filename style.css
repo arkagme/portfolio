@@ -1,0 +1,23 @@
+/* Default styles for larger screens */
+h1 {
+    font-size: 4vw; /* The font-size adjusts according to the viewport width */
+    text-align: center;
+    color: #333; /* Adjust this to the color you prefer */
+    margin: 20px 0;
+    line-height: 1.2;
+    font-family: 'Arial', sans-serif; /* You can use any font-family */
+}
+
+/* For tablets (width below 768px) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 6vw; /* Increase the font size for smaller screens */
+    }
+}
+
+/* For mobile phones (width below 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 8vw; /* Further increase the font size for very small screens */
+    }
+}
