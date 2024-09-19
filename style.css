@@ -1,23 +1,40 @@
 /* Default styles for larger screens */
 h1 {
-    font-size: 4vw; /* The font-size adjusts according to the viewport width */
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30vw; /* The font-size adjusts according to the viewport width */
     text-align: center;
     color: #333; /* Adjust this to the color you prefer */
     margin: 20px 0;
     line-height: 1.2;
     font-family: 'Arial', sans-serif; /* You can use any font-family */
 }
+body{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:100px;
+    margin-bottom: auto;
+}
 
 /* For tablets (width below 768px) */
 @media (max-width: 768px) {
+    body{
+        margin-top: 20vw;
+    }
     h1 {
-        font-size: 60vw; /* Increase the font size for smaller screens */
+        font-size: 120vw; /* Increase the font size for smaller screens */
     }
 }
 
 /* For mobile phones (width below 480px) */
 @media (max-width: 480px) {
+    body{
+        margin-top: 20vw;
+    }
     h1 {
-        font-size: 80vw; /* Further increase the font size for very small screens */
+        margin-top:100px;
+        font-size: 120vw; /* Further increase the font size for very small screens */
     }
 }
