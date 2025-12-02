@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle Wave </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #222134;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #201c2e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            color : white;
+            box-sizing: border-box;
+            width: 100%;
+        }
+        .controls {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .slider-container {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px;
+            background: #1c202c;
+            border-radius: 8px;
+            border: 1px solid #12151b;
+            color : white;
+            box-sizing: border-box;
+        }
+        .slider-label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: white;
+        }
+        .slider-value {
+            display: block;
+            margin-top: 5px;
+            color: white;
+            font-size: 14px;
+        }
+        input[type="range"] {
+            width: 200px;
+            margin: 5px 0;
+        }
+        #canvas-container {
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 8px;
+            overflow: hidden;
+            background: black;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        #canvas-container canvas {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+            
+            .container {
+                padding: 15px;
+                margin: 0;
+                border-radius: 5px;
+            }
+            
+            .slider-container {
+                display: block;
+                margin: 10px 0;
+                padding: 10px;
+                width: calc(100% - 20px);
+                box-sizing: border-box;
+            }
+            
+            input[type="range"] {
+                width: 150px;
+            }
+            
+            h2 {
+                font-size: 1.3em;
+            }
+            
+            p {
+                font-size: 14px;
+            }
+            
+            .description {
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            
+            input[type="range"] {
+                width: 190px;
+            }
+            
+            h2 {
+                font-size: 1.2em;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Interactive Triangle Wave Visualization</h2>
+        <p>Adjust the number of harmonics to see how the Fourier series approximates a Triangle wave:</p>
+        
+        <div class="controls">
+            <div class="slider-container">
+                <label class="slider-label">Number of Harmonics (n)</label>
+                <input type="range" id="harmonics" min="0" max="150" value="1">
+                <span class="slider-value" id="harmonics-value">0</span>
+            </div>
+            <div class="slider-container">
+                <label class="slider-label">Animation Speed</label>
+                <input type="range" id="speed" min="0.01" max="0.2" step="0.01" value="0.035">
+                <span class="slider-value" id="speed-value">0.04</span>
+            </div>
+        </div>
+        
+        <div id="canvas-container"></div>
+
+    </div>
+
+    <script>
+        let time = 0;
+        let wave = [];
+        let numHarmonics = 1;
+        let animSpeed = 0.1;
+        let canvasWidth, canvasHeight;
+        let scaleFactor = 1;
+        
+        function setup() {
+            updateCanvasSize();
+            let canvas = createCanvas(canvasWidth, canvasHeight);
+            canvas.parent('canvas-container');
+            
+            document.getElementById('harmonics').addEventListener('input', function() {
+                numHarmonics = parseInt(this.value);
+                document.getElementById('harmonics-value').textContent = numHarmonics;
+            });
+            
+            document.getElementById('speed').addEventListener('input', function() {
+                animSpeed = parseFloat(this.value);
+                document.getElementById('speed-value').textContent = animSpeed;
+            });
+        }
+
+        function windowResized() {
+            updateCanvasSize();
+            resizeCanvas(canvasWidth, canvasHeight);
+            wave = [];
+        }
+
+        function updateCanvasSize() {
+            let container = document.querySelector('.container');
+            let containerWidth = container.clientWidth - 40; 
+            
+            canvasWidth = Math.min(containerWidth, 760);
+            canvasHeight = Math.max(canvasWidth * 0.53, 200); 
+            
+            scaleFactor = canvasWidth / 760;
+        }
+        
+        function draw() {
+            background(0);
+            
+            let centerX = canvasWidth * 0.26;
+            let centerY = canvasHeight * 0.5;
+            translate(centerX, centerY);
+
+            let x = 0;
+            let y = 0;
+            
+
+            for (let i = 0; i <= numHarmonics; i++) {
+                let prevX = x;
+                let prevY = y;
+                n = (i*2)+1
+                let coefficient = (8 * Math.pow(-1, (n-1)/2)) / (PI*PI * n*n)
+                let radius = (100 * scaleFactor) * coefficient;
+                x += radius * cos(n * time);
+                y += radius * sin(n * time);
+                
+                stroke('yellow');
+                strokeWeight(Math.max(1, scaleFactor));
+                noFill();
+                ellipse(prevX, prevY, radius * 2);
+                
+                fill('red')
+                stroke('red');
+                strokeWeight(Math.max(2, 2 * scaleFactor));
+                line(prevX, prevY, x, y);
+                ellipse(x, y, Math.max(6, 8 * scaleFactor));
+            }
+            
+           
+            wave.unshift(y);
+
+            let waveStartX = canvasWidth * 0.37;
+            stroke('red')
+            strokeWeight(Math.max(2, 2 * scaleFactor));
+            line(x, y, waveStartX - centerX, wave[0]);
+            
+            translate(waveStartX - centerX, 0);
+            stroke('red')
+            strokeWeight(Math.max(2, 2 * scaleFactor));
+            noFill();
+            beginShape();
+            for (let i = 0; i < wave.length; i++) {
+                vertex(i * 2 * scaleFactor , wave[i]);
+            }
+            endShape();
+            
+            time += animSpeed;
+            let maxWaveLength = Math.floor((canvasWidth * 0.6) / (2 * scaleFactor));
+            if (wave.length > maxWaveLength) {
+                wave.pop();
+            }
+        }
+    </script>
+</body>
+</html>

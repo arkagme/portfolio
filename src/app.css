@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@config '../tailwind.config.ts';
+@tailwind utilities;
+
+@layer utilities{
+        body{
+            @apply bg-rosepine-base text-rosepine-text font-sans antialiased;
+    }
+}

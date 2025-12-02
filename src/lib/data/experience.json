@@ -1,0 +1,10 @@
+[
+  {
+    "company": "TARS",
+    "role": "Backend Developer Intern",
+    "date": "January 2025 - April 2025",
+    "description": "Helped fully design + develop features/pages like the landing page, career simulation and redesign critical features like the college simulation platform, roadmap, etc.",
+    "tags": ["TypeScript", "PostgreSQL", "PrismaORM" , "Express.js", "Node.js" , "Swagger"],
+    "link": "https://example.com"
+  }
+]
