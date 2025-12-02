@@ -50,7 +50,7 @@
           <Github size={20} />
         </a>
         <a
-          href="https://twitter.com"
+          href="https://x.com/arka_gme"
           target="_blank"
           rel="noopener noreferrer"
           class="p-2 rounded-lg bg-rosepine-overlay/50 text-rosepine-subtle hover:text-rosepine-text hover:bg-rosepine-highlightLow transition-all"
@@ -59,7 +59,7 @@
           <Twitter size={20} />
         </a>
         <a
-          href="https://linkedin.com"
+          href="https://linkedin.com/in/arkagme"
           target="_blank"
           rel="noopener noreferrer"
           class="p-2 rounded-lg bg-rosepine-overlay/50 text-rosepine-subtle hover:text-rosepine-text hover:bg-rosepine-highlightLow transition-all"
@@ -68,7 +68,7 @@
           <Linkedin size={20} />
         </a>
         <a
-          href="mailto:hello@example.com"
+          href="mailto:codearka2002@gmail.com"
           class="p-2 rounded-lg bg-rosepine-overlay/50 text-rosepine-subtle hover:text-rosepine-text hover:bg-rosepine-highlightLow transition-all"
           aria-label="Email"
         >
