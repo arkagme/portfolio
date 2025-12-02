@@ -113,11 +113,11 @@
       <div class="relative aspect-[3/4] md:aspect-auto md:h-[600px] w-full overflow-hidden rounded-2xl bg-rosepine-highlightLow shadow-lg group">
         <img 
           src="/picture.webp" 
-          alt="Arkaprava Gaine" 
+          alt="Profile Pic" 
           class="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity duration-500"
         />
         <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-rosepine-base/90 to-transparent md:hidden">
-          <p class="text-sm font-medium text-rosepine-subtle">Arkaprava Gaine</p>
+          <p class="text-sm font-medium text-rosepine-subtle">Just me speaking in an event</p>
         </div>
       </div>
     </div>
