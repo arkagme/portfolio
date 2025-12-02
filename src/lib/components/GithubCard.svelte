@@ -77,33 +77,37 @@
 
   <!-- Language Bar -->
   <div class="flex flex-col gap-2">
-    <div class="flex items-center justify-between text-xs text-rosepine-subtle">
+    <a     href="https://github.com/arkagme"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="flex items-center justify-between text-xs text-rosepine-subtle">
       <span>View on GitHub</span>
       <ExternalLink size={12} />
-    </div>
+    </a>
     <div class="h-3 w-full flex rounded-full bg-rosepine-overlay relative">
       {#each languages as lang, i}
-        <div
-          class="h-full transition-all duration-300 hover:opacity-80 relative group {i ===
-          0
-            ? 'rounded-l-full'
-            : ''} {i === languages.length - 1 ? 'rounded-r-full' : ''}"
-          style="width: {getPercentage(
-            lang.size
-          )}%; background-color: {lang.color};"
+        <button
+          type="button"
+          class="group h-full transition-all duration-300 hover:opacity-80 relative
+                 focus:outline-none focus-visible:ring-1 focus-visible:ring-rosepine-highlightMed
+                 {i === 0 ? 'rounded-l-full' : ''} {i === languages.length - 1 ? 'rounded-r-full' : ''}"
+          style="width: {getPercentage(lang.size)}%; background-color: {lang.color};"
+          aria-label={`Language ${lang.name} ${getPercentage(lang.size)} percent`}
         >
-          <!-- Tooltip -->
           <div
-            class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-rosepine-base border border-rosepine-highlightLow px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-lg"
+            class="pointer-events-none absolute bottom-full mb-2 left-1/2 -translate-x-1/2
+                   bg-rosepine-base border border-rosepine-highlightLow px-2 py-1 rounded text-xs
+                   whitespace-nowrap opacity-0 group-hover:opacity-100 group-focus:opacity-100
+                   transition-opacity z-20 shadow-lg"
           >
-            <span class="font-bold" style="color: {lang.color}"
-              >{lang.name}</span
-            >
-            <span class="text-rosepine-text ml-1"
-              >{getPercentage(lang.size)}%</span
-            >
+            <span class="font-bold" style="color: {lang.color}">
+              {lang.name}
+            </span>
+            <span class="text-rosepine-text ml-1">
+              {getPercentage(lang.size)}%
+            </span>
           </div>
-        </div>
+        </button>
       {/each}
     </div>
   </div>
