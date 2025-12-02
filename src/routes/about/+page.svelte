@@ -56,7 +56,7 @@
           class="p-2 rounded-lg bg-rosepine-overlay/50 text-rosepine-subtle hover:text-rosepine-text hover:bg-rosepine-highlightLow transition-all"
           aria-label="Twitter"
         >
-          <Twitter size={20} />
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-5"  viewBox="0 0 14 14"><g fill="none"><g clip-path="url(#SVGG1Ot4cAD)"><path fill="currentColor" d="M11.025.656h2.147L8.482 6.03L14 13.344H9.68L6.294 8.909l-3.87 4.435H.275l5.016-5.75L0 .657h4.43L7.486 4.71zm-.755 11.4h1.19L3.78 1.877H2.504z"/></g><defs><clipPath id="SVGG1Ot4cAD"><path fill="#fff" d="M0 0h14v14H0z"/></clipPath></defs></g></svg>
         </a>
         <a
           href="https://linkedin.com/in/arkagme"
@@ -117,7 +117,7 @@
           class="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity duration-500"
         />
         <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-rosepine-base/90 to-transparent md:hidden">
-          <p class="text-sm font-medium text-rosepine-subtle">Just me speaking in an event</p>
+          <p class="text-sm font-medium text-rosepine-subtle">Just me speaking at an event</p>
         </div>
       </div>
     </div>
