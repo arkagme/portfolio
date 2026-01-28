@@ -165,6 +165,22 @@
         class="text-rosepine-love hover:text-rosepine-rose underline decoration-rosepine-love/30 hover:decoration-rosepine-rose transition-all"
         >Sastra University
       </a>
+      and a Research Intern at 
+      <a
+        href="https://precog.iiit.ac.in"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-rosepine-love hover:text-rosepine-rose underline decoration-rosepine-love/30 hover:decoration-rosepine-rose transition-all"
+        >Precog Labs
+      </a>
+      @
+      <a
+        href="https://www.iiit.ac.in/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-rosepine-love hover:text-rosepine-rose underline decoration-rosepine-love/30 hover:decoration-rosepine-rose transition-all"
+        >IIIT Hyderabad
+      </a>
     </p>
     <p>
       <a
