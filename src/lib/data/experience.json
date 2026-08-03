@@ -1,5 +1,14 @@
 [
   {
+    "company": "Saral AI",
+    "role": "Developer",
+    "date": "December 2025 - Present",
+    "description": "Implemented multiple features, overhauled the backend from monolith to microservices - migrating from Python FastAPI to Go Gin with Python microservices - set up CI/CD pipelines, improved overall performance, overhauled the frontend from Vite + React to Next.js with Shadcn UI and various other optimizations, and published an internal PDF-parsing library",
+    "tags": ["Go" , "FastAPI" , "Docker" , "Postgres" , "Redis" ,  "Microservices" , "Google Cloud","TypeScript", "Next.js" , "Shadcn UI" ],
+    "link": "https://example.com"
+
+  },
+  {
     "company": "TARS",
     "role": "Backend Developer Intern",
     "date": "January 2025 - April 2025",

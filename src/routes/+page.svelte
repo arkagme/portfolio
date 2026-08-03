@@ -112,8 +112,9 @@
     class="hero-sub text-xl md:text-xl text-rosepine-subtle mb-5 max-w-3xl leading-relaxed"
   >
     <p class="mb-4">
-      A curious engineer and <span class="text-rosepine-text font-semibold"
-        >backend developer</span
+      A curious <span class="text-rosepine-text font-semibold"
+        >engineer</span> and <span class="text-rosepine-text font-semibold"
+        >builder</span
       >
       passionate about building efficient and scalable systems.
       <!-- <span class="text-rosepine-text font-semibold">
@@ -157,15 +158,15 @@
         class="text-rosepine-love hover:text-rosepine-rose underline decoration-rosepine-love/30 hover:decoration-rosepine-rose transition-all"
         >Tailwind CSS
       </a> -->
-      Currently a final year CS undergrad at 
+      Currently a MS by Research in Computer Science student at 
       <a
-        href="https://sastra.edu"
+        href="https://www.iiit.ac.in/"
         target="_blank"
         rel="noopener noreferrer"
         class="text-rosepine-love hover:text-rosepine-rose underline decoration-rosepine-love/30 hover:decoration-rosepine-rose transition-all"
-        >Sastra University
+        >IIIT Hyderabad
       </a>
-      and a Research Intern at 
+      and a Researcher at 
       <a
         href="https://precog.iiit.ac.in"
         target="_blank"
